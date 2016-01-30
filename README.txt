@@ -3,7 +3,7 @@ building/programming from the command line.
 
 Requirements: gcc-avr, binutils-avr, gdb-avr avr-libc avrdude
 
-On ubunt:
+On ubuntu:
 sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
 
 Build/Program:
