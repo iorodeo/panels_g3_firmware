@@ -11,7 +11,9 @@ hex:
 	avr-objcopy -R .eeprom -O ihex panel.elf panel.hex
 	
 flash:
-	avrdude -c avrispmkII -p m168 -U flash:w:panel.hex -U eeprom:w:panel.eep
+	avrdude -c avrispmkII -p m168 -U efuse:w:0x0:m  -U hfuse:w:0xd4:m -U lfuse:w:0xf7:m
+	avrdude -c avrispmkII -p m168 -U flash:w:panel_bl.hex
+	avrdude -c avrispmkII -p m168 -D -U flash:w:panel.hex -U eeprom:w:panel.eep
 
 clean:
 	rm -f *.o

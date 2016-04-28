@@ -178,18 +178,18 @@ void i2cSlaveReceiveService(u08 receiveDataLength, u08* receiveData)
 void UpdateDisplay(void)
 {
 	volatile unsigned char temp_frame;
-	const unsigned char addrval[] = 
-    			{0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
-	//const unsigned char addrval[] = {
-    //    0b11111110,
-    //    0b11111101, 
-    //    0b11111011, 
-    //    0b11110111, 
-    //    0b11101111, 
-    //    0b11011111, 
-    //    0b10111111, 
-    //    0b01111111 
-    //};
+	//const unsigned char addrval[] = 
+    //			{0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};
+	const unsigned char addrval[] = {
+        0b11111110,
+        0b11111101, 
+        0b11111011, 
+        0b11110111, 
+        0b11101111, 
+        0b11011111, 
+        0b10111111, 
+        0b01111111 
+    };
 		
 
 	// clear the data ports
