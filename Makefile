@@ -18,5 +18,5 @@ flash:
 clean:
 	rm -f *.o
 	rm -f *.elf
-	rm -f *.hex
+	rm -f panel.hex
 	rm -f *.eep
