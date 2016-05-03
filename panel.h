@@ -13,6 +13,10 @@
 #include "i2c.h"
 #include "legacy.h"
 
+#ifndef PANEL_ADDRESS
+#define PANEL_ADDRESS 0x7f
+#endif
+
 #define LED_ADDRESS_PORT PORTD
 #define LED_ADDRESS_PORT_DIRECTION DDRD
 
@@ -54,7 +58,8 @@ void SystemReset(void);
 void DisplayNum(void);
 void DisplayBusNum(uint8_t busNum);
 
-unsigned char Panel_ID[1] EEPROM = {0x7F}; //change the initial address to 127 instead of 0
+//unsigned char Panel_ID[1] EEPROM = {0x7F}; //change the initial address to 127 instead of 0
+unsigned char Panel_ID[1] EEPROM = {PANEL_ADDRESS}; //change the initial address to 127 instead of 0
 			
 static unsigned char NUMS[10][4] EEPROM = { 	{0xFE, 0x82, 0xFE, 0x00},
 						{0x84, 0xFE, 0x80, 0x00},					
